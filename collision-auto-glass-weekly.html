@@ -14,22 +14,16 @@
         .logo { max-width: 120px; margin-bottom: 16px; }
         .client-name { font-size: 1.25rem; font-weight: 700; color: #0f172a; }
         .period { font-size: 0.875rem; color: #64748b; margin-top: 4px; }
-        .metrics { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
-        .metric { background: white; border-radius: 16px; padding: 20px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
-        .metric.primary { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); border: none; }
-        .metric.primary .label, .metric.primary .value { color: white; }
-        .metric .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 4px; }
-        .metric .value { font-size: 2rem; font-weight: 700; color: #0f172a; }
-        .metric .change { font-size: 0.75rem; margin-left: 8px; padding: 2px 8px; border-radius: 10px; }
-        .metric .change.positive { background: rgba(255,255,255,0.2); color: white; }
-        .metric:not(.primary) .change.positive { background: #dcfce7; color: #16a34a; }
-        .top-performers { background: white; border-radius: 16px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; margin-bottom: 24px; }
-        .top-performers h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 12px; text-align: center; }
-        .performer { display: flex; align-items: center; padding: 8px 0; border-bottom: 1px solid #f1f5f9; }
-        .performer:last-child { border-bottom: none; }
-        .performer .rank { width: 24px; height: 24px; background: #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; color: #64748b; margin-right: 12px; }
-        .performer .name { flex: 1; font-size: 0.875rem; color: #475569; }
-        .performer .value { font-weight: 600; color: #0f172a; font-size: 0.875rem; }
+        .hero-metric { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); border-radius: 20px; padding: 32px 24px; text-align: center; margin-bottom: 16px; }
+        .hero-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.8); margin-bottom: 8px; }
+        .hero-value { font-size: 3.5rem; font-weight: 700; color: white; line-height: 1; }
+        .hero-value .change { font-size: 1rem; margin-left: 8px; padding: 4px 10px; border-radius: 12px; background: rgba(255,255,255,0.2); vertical-align: middle; }
+        .breakdown { background: white; border-radius: 16px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; margin-bottom: 24px; }
+        .breakdown h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 12px; text-align: center; }
+        .breakdown-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f1f5f9; }
+        .breakdown-row:last-child { border-bottom: none; }
+        .breakdown-name { font-size: 0.875rem; color: #475569; }
+        .breakdown-value { font-size: 1.125rem; font-weight: 700; color: #0f172a; }
         .narrative { background: white; border-radius: 16px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; margin-bottom: 24px; }
         .narrative p { color: #475569; font-size: 0.9rem; line-height: 1.7; margin: 0; }
         .signature { margin-top: 16px; padding-top: 16px; border-top: 1px solid #f1f5f9; }
@@ -46,30 +40,20 @@
             <div class="period">Dec 7-13, 2025</div>
         </div>
         
-        <div class="metrics">
-            <div class="metric primary">
-                <div class="label">Conversions</div>
-                <div class="value">44</div>
-            </div>
-            <div class="metric">
-                <div class="label">Ad Spend</div>
-                <div class="value">$2313.84</div>
-            </div>
-            <div class="metric">
-                <div class="label">Cost Per Lead</div>
-                <div class="value">$52.59</div>
-            </div>
+        <div class="hero-metric">
+            <div class="hero-label">Total Conversions</div>
+            <div class="hero-value">44</div>
         </div>
         
         
-        <div class="top-performers">
-            <h3>Top Performers</h3>
-            <div class="performer"><span class="rank">1</span><span class="name">Car Window Repair</span><span class="value">5</span></div><div class="performer"><span class="rank">2</span><span class="name">Windshield Repair</span><span class="value">5</span></div><div class="performer"><span class="rank">3</span><span class="name">Car Window Replacement</span><span class="value">3</span></div>
+        <div class="breakdown">
+            <h3>Breakdown</h3>
+            <div class="breakdown-row"><span class="breakdown-name">AGMP Call</span><span class="breakdown-value">22</span></div><div class="breakdown-row"><span class="breakdown-name">AGMP Form</span><span class="breakdown-value">21</span></div><div class="breakdown-row"><span class="breakdown-name">Calls from ads</span><span class="breakdown-value">1</span></div>
         </div>
         
         
         <div class="narrative">
-            <p>Great week from December 7-13! You generated 44 solid conversions with Car Window Repair leading the charge, and we're seeing steady, consistent performance across your campaigns. Thanks for trusting us to keep your business growing strong.</p>
+            <p>This week you received 44 new leads for your auto glass shop, with a great mix coming from both calls (22) and online forms (21), plus 1 additional call from ads. Your lead generation maintained its steady performance, keeping your pipeline consistently filled. Thank you for trusting us with your marketing - it's a pleasure working with you!</p>
             <div class="signature">
                 <div class="name">Matt</div>
                 <div class="company">Auto Glass Marketing Pros</div>
