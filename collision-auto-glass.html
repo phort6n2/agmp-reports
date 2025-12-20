@@ -59,7 +59,7 @@
         .looking-ahead p { color: #0c4a6e; margin: 0; }
         .footer { text-align: center; padding-top: 40px; color: #94a3b8; font-size: 0.8rem; }
         .footer a { color: #0ea5e9; text-decoration: none; }
-        @media (max-width: 768px) { .header { flex-direction: column; gap: 20px; } .agency-brand { text-align: left; } .metrics-grid { grid-template-columns: 1fr; } .campaign-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .header { flex-direction: column-reverse; gap: 20px; } .agency-brand { text-align: center; } .agency-brand img { max-width: 140px; } .client-info { text-align: center; } .metrics-grid { grid-template-columns: 1fr; } .campaign-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -80,17 +80,17 @@
             <div class="metric-card highlight">
                 <div class="metric-label">Total Conversions</div>
                 <div class="metric-value">281</div>
-                <div class="metric-subtext">Quality leads delivered</div>
+                <div class="metric-subtext">New customer leads</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Total Cost</div>
                 <div class="metric-value">$11,472</div>
-                <div class="metric-subtext">Ad spend invested</div>
+                <div class="metric-subtext">Ad spend</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Cost Per Conversion</div>
                 <div class="metric-value">$40.82</div>
-                <div class="metric-subtext">Average lead cost</div>
+                <div class="metric-subtext">Average cost per lead</div>
             </div>
         </div>
         
@@ -103,7 +103,7 @@
             <div class="campaign-grid">
                 <div class="campaign-card">
                     <div class="campaign-name">
-                        <div class="dot blue"></div>
+                        <span class="dot blue"></span>
                         AGMP Lead Gen
                     </div>
                     <div class="campaign-stats">
@@ -123,7 +123,7 @@
                 </div>
                 <div class="campaign-card">
                     <div class="campaign-name">
-                        <div class="dot purple"></div>
+                        <span class="dot purple"></span>
                         AGMP PMAX
                     </div>
                     <div class="campaign-stats">
@@ -143,7 +143,7 @@
                 </div>
                 <div class="campaign-card">
                     <div class="campaign-name">
-                        <div class="dot green"></div>
+                        <span class="dot green"></span>
                         AGMP Proximity Push
                     </div>
                     <div class="campaign-stats">
@@ -162,41 +162,31 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="top-performers">
-                <h4>Top Ad Groups by Conversions</h4>
-                <ul class="top-performers-list">
-                    <li>
-                        <span class="name">Car Window Repair</span>
-                        <span class="value">47 conversions</span>
-                    </li>
-                    <li>
-                        <span class="name">Car Window Replacement</span>
-                        <span class="value">16 conversions</span>
-                    </li>
-                    <li>
-                        <span class="name">Windshield Repair</span>
-                        <span class="value">14 conversions</span>
-                    </li>
-                </ul>
+        </div>
+        
+        <!-- TOP PERFORMERS -->
+        <div class="section">
+            <div class="section-title">
+                <div class="icon">🎯</div>
+                Top Performers
             </div>
-            
-            <div class="top-performers">
-                <h4>Top Keywords by Conversions</h4>
-                <ul class="top-performers-list">
-                    <li>
-                        <span class="name">"car window repair" [BROAD]</span>
-                        <span class="value">38 conversions</span>
-                    </li>
-                    <li>
-                        <span class="name">"windshield replacement" [BROAD]</span>
-                        <span class="value">19 conversions</span>
-                    </li>
-                    <li>
-                        <span class="name">"car window replacement" [BROAD]</span>
-                        <span class="value">16 conversions</span>
-                    </li>
-                </ul>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div class="top-performers">
+                    <h4>Top Ad Groups</h4>
+                    <ul class="top-performers-list">
+                        <li><span class="name">Car Window Repair</span> <span class="value">47 conversions</span></li>
+                        <li><span class="name">Car Window Replacement</span> <span class="value">16 conversions</span></li>
+                        <li><span class="name">Windshield Repair</span> <span class="value">14 conversions</span></li>
+                    </ul>
+                </div>
+                <div class="top-performers">
+                    <h4>Top Keywords</h4>
+                    <ul class="top-performers-list">
+                        <li><span class="name">"car window repair"</span> <span class="value">38 conversions</span></li>
+                        <li><span class="name">"windshield replacement"</span> <span class="value">19 conversions</span></li>
+                        <li><span class="name">"car window replacement"</span> <span class="value">16 conversions</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
         
@@ -207,15 +197,15 @@
                 Monthly Analysis
             </div>
             <div class="analysis-content">
-                <p>November was an exceptional month for Collision Auto Glass & Calibration, with <strong>281 total conversions</strong> generated across all campaigns. We invested $11,472 in ad spend and maintained a solid cost per conversion of $40.82, delivering consistent, high-quality leads to fuel your business growth.</p>
+                <p>November was an excellent month for Collision Auto Glass & Calibration. We generated <strong>281 new customer leads</strong> through Google Ads while maintaining efficient cost-per-conversion of $40.82. Our campaign optimization work continues to pay dividends, with particularly strong performance from car window repair services and windshield replacement targeting.</p>
                 
-                <p><strong>Key accomplishments this month:</strong></p>
                 <ul class="accomplishments-list">
-                    <li>Our Lead Gen campaign delivered <strong>149 conversions</strong> with car window repair emerging as the top performer, generating 47 conversions and proving to be your most in-demand service</li>
-                    <li>The Performance Max campaign contributed <strong>132 conversions at $35.82 per conversion</strong>, providing excellent efficiency and expanding your reach across Google's entire network</li>
-                    <li>Windshield and window-related keywords dominated performance, with "car window repair" alone driving <strong>38 conversions</strong> and "windshield replacement" contributing 19 conversions</li>
+                    <li>Delivered 281 high-quality leads across all campaigns, with our Lead Gen campaign generating 149 conversions and PMAX contributing 132 additional conversions</li>
+                    <li>Achieved strong keyword performance with "car window repair" leading at 38 conversions and "windshield replacement" generating 19 conversions from targeted customer searches</li>
+                    <li>Maintained balanced campaign portfolio with our Car Window Repair ad group becoming the top performer with 47 conversions, showing strong local market demand</li>
                 </ul>
                 
                 <div class="looking-ahead">
-                    <div class="looking-ahead-title">Looking Ahead</div>
-                    <p>For December, we'll focus on scaling the high-performing car window repair campaigns while optimizing our Performance Max strategy to capture even more qualified leads. We're also reviewing the Proximity Push campaign to enhance its performance and contribute to your overall growth.
+                    <div class="looking-ahead-title">Looking Ahead to December</div>
+                    <p>I'm focusing on scaling our top-performing Car Window Repair and Windshield Replacement campaigns while optimizing our PMAX campaign structure to capture even more qualified leads during the busy winter season.</p>
+                
