@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Report | Auto Glass Agency</title>
+    <link rel="icon" type="image/webp" href="https://berqwp-cdn.sfo3.cdn.digitaloceanspaces.com/cache/autoglassmarketingpros.com/wp-content/uploads/2025/09/Auto-Glass-Marketing-Pros-Logo-1-252w-2x-png.webp?bwp">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #e2e8f0; }
+        .client-info h1 { font-size: 1.75rem; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+        .report-period { display: inline-block; background: #0ea5e9; color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; }
+        .agency-brand img { max-width: 180px; height: auto; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; }
+        .metric-card { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
+        .metric-card.highlight { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; border: none; }
+        .metric-label { font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 8px; }
+        .metric-card.highlight .metric-label { color: rgba(255,255,255,0.8); }
+        .metric-value { font-size: 2.25rem; font-weight: 700; color: #0f172a; }
+        .metric-card.highlight .metric-value { color: white; }
+        .metric-subtext { font-size: 0.8rem; color: #64748b; margin-top: 4px; }
+        .metric-card.highlight .metric-subtext { color: rgba(255,255,255,0.7); }
+        .section { background: white; border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
+        .section-title { font-size: 1.125rem; font-weight: 700; color: #0f172a; margin-bottom: 20px; }
+        .benchmark-win { background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; border-left: 4px solid #16a34a; }
+        .benchmark-win-text { color: #166534; font-weight: 500; }
+        .campaign-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .campaign-card { background: #f8fafc; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; }
+        .campaign-name { font-size: 0.875rem; font-weight: 600; color: #475569; margin-bottom: 12px; }
+        .campaign-stats { display: flex; gap: 24px; }
+        .campaign-stat-value { font-size: 1.5rem; font-weight: 700; color: #0f172a; }
+        .campaign-stat-label { font-size: 0.75rem; color: #64748b; }
+        .performers-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .performers-list { list-style: none; padding: 0; }
+        .performers-list li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.8rem; }
+        .performers-list .name { color: #475569; }
+        .performers-list .value { font-weight: 600; color: #0f172a; }
+        .insights-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .insight-card { background: #f8fafc; border-radius: 12px; padding: 20px; text-align: center; }
+        .insight-label { font-size: 0.75rem; color: #64748b; text-transform: uppercase; margin-bottom: 8px; }
+        .insight-value { font-size: 1.25rem; font-weight: 700; color: #0f172a; }
+        .analysis-content { color: #475569; font-size: 0.95rem; line-height: 1.8; }
+        .analysis-content p { margin-bottom: 16px; }
+        .accomplishments-list { list-style: none; padding: 0; margin: 16px 0; }
+        .accomplishments-list li { padding: 12px 0 12px 32px; position: relative; border-bottom: 1px solid #f1f5f9; }
+        .accomplishments-list li::before { content: "✓"; position: absolute; left: 0; top: 12px; width: 20px; height: 20px; background: #dcfce7; color: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; }
+        .looking-ahead { background: #f0f9ff; border-radius: 12px; padding: 20px; margin-top: 20px; border-left: 4px solid #0ea5e9; }
+        .looking-ahead-title { font-weight: 600; color: #0369a1; margin-bottom: 8px; }
+        .footer { text-align: center; padding-top: 40px; color: #94a3b8; font-size: 0.8rem; }
+        .footer a { color: #0ea5e9; text-decoration: none; }
+        @media (max-width: 768px) { 
+          .header { flex-direction: column-reverse; gap: 20px; } 
+          .agency-brand { text-align: center; width: 100%; display: flex; justify-content: center; } 
+          .agency-brand img { max-width: 140px; } 
+          .client-info { text-align: center; } 
+          .metrics-grid, .campaign-grid, .performers-grid, .insights-grid { grid-template-columns: 1fr; } 
+          .performers-list li { flex-direction: column; gap: 4px; } 
+          .section { padding: 20px; } 
+          .campaign-stats { flex-direction: column; gap: 12px; } 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="client-info">
+                <h1>Auto Glass Agency</h1>
+                <span class="report-period">December 2025</span>
+            </div>
+            <div class="agency-brand">
+                <img src="https://berqwp-cdn.sfo3.cdn.digitaloceanspaces.com/cache/autoglassmarketingpros.com/wp-content/uploads/2025/09/Auto-Glass-Marketing-Pros-Logo-1-252w-2x-png.webp?bwp" alt="Auto Glass Marketing Pros">
+            </div>
+        </div>
+        
+        <!-- HERO METRICS -->
+        <div class="metrics-grid">
+            <div class="metric-card highlight">
+                <div class="metric-label">New Customers</div>
+                <div class="metric-value">164</div>
+                <div class="metric-subtext">Total conversions this month</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Total Investment</div>
+                <div class="metric-value">$3,866</div>
+                <div class="metric-subtext">Ad spend for December</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Cost Per Lead</div>
+                <div class="metric-value">$23.57</div>
+                <div class="metric-subtext">Average acquisition cost</div>
+            </div>
+        </div>
+
+        <!-- BENCHMARK WINS -->
+        <div class="section">
+            <div class="section-title">🎯 Industry Performance</div>
+            <div class="benchmark-win">
+                <div class="benchmark-win-text">Your $23.57 cost per lead is 16% below the national average of $27.94</div>
+            </div>
+            <div class="benchmark-win">
+                <div class="benchmark-win-text">Your 20.25% conversion rate exceeds the industry average of 12.61%</div>
+            </div>
+        </div>
+
+        <!-- CAMPAIGN BREAKDOWN -->
+        <div class="section">
+            <div class="section-title">📊 Campaign Performance</div>
+            <div class="campaign-grid">
+                <div class="campaign-card">
+                    <div class="campaign-name">AGMP Lead Gen</div>
+                    <div class="campaign-stats">
+                        <div>
+                            <div class="campaign-stat-value">151</div>
+                            <div class="campaign-stat-label">Conversions</div>
+                        </div>
+                        <div>
+                            <div class="campaign-stat-value">$24.48</div>
+                            <div class="campaign-stat-label">Cost/Conv</div>
+                        </div>
+                        <div>
+                            <div class="campaign-stat-value">$3,696</div>
+                            <div class="campaign-stat-label">Total Spend</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="campaign-card">
+                    <div class="campaign-name">AGMP PMax</div>
+                    <div class="campaign-stats">
+                        <div>
+                            <div class="campaign-stat-value">13</div>
+                            <div class="campaign-stat-label">Conversions</div>
+                        </div>
+                        <div>
+                            <div class="campaign-stat-value">$13.04</div>
+                            <div class="campaign-stat-label">Cost/Conv</div>
+                        </div>
+                        <div>
+                            <div class="campaign-stat-value">$170</div>
+                            <div class="campaign-stat-label">Total Spend</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOP PERFORMERS -->
+        <div class="section">
+            <div class="section-title">⭐ Top Performers</div>
+            <div class="performers-grid">
+                <div>
+                    <h4 style="margin-bottom: 16px; color: #475569; font-size: 0.9rem; font-weight: 600;">Best Ad Groups</h4>
+                    <ul class="performers-list">
+                        <li><span class="name">Windshield Replacement</span><span class="value">55 leads</span></li>
+                        <li><span class="name">Windshield Repair</span><span class="value">30 leads</span></li>
+                        <li><span class="name">Auto Glass Replacement</span><span class="value">28 leads</span></li>
+                        <li><span class="name">Brantford Auto Glass Repair</span><span class="value">16 leads</span></li>
+                        <li><span class="name">$0 Out-of-Pocket</span><span class="value">10 leads</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px; color: #475569; font-size: 0.9rem; font-weight: 600;">Top Keywords</h4>
+                    <ul class="performers-list">
+                        <li><span class="name">"windshield replacement"</span><span class="value">55 leads</span></li>
+                        <li><span class="name">"windshield repair"</span><span class="value">30 leads</span></li>
+                        <li><span class="name">"auto glass replacement"</span><span class="value">28 leads</span></li>
+                        <li><span class="name">"insurance windshield replacement"</span><span class="value">10 leads</span></li>
+                        <li><span class="name">"windshield repair brantford"</span><span class="value">8 leads</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEVICE & DAY INSIGHTS -->
+        <div class="section">
+            <div class="section-title">📱 Performance Insights</div>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-label">Best Device</div>
+                    <div class="insight-value">Mobile</div>
+                    <div style="margin-top: 8px; font-size: 0.8rem; color: #64748b;">144 conversions (88% of total)</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-label">Best Day</div>
+                    <div class="insight-value">Monday</div>
+                    <div style="margin-top: 8px; font-size: 0.8rem; color: #64748b;">33 conversions</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MONTHLY ANALYSIS -->
+        <div class="section">
+            <div class="section-title">📈 December Highlights</div>
+            <div class="analysis-content">
+                <p>What an outstanding month for Auto Glass Agency! December delivered exceptional results with 164 new customers and an impressive 20.25% conversion rate that puts you well ahead of industry standards.</p>
+                
+                <p>Your campaigns are firing on all cylinders. The AGMP Lead Gen campaign continues to be your workhorse, bringing in 151 conversions at a solid $24.48 cost per lead. Meanwhile, our AGMP Performance Max campaign is proving to be incredibly efficient at just $13.04 per conversion.</p>
+
+                <ul class="accomplishments-list">
+                    <li>Generated 164 high-quality leads at an excellent $23.57 cost per conversion</li>
+                    <li>Achieved a 20.25% conversion rate - 60% higher than industry average</li>
+                    <li>Dominated mobile search with 88% of conversions coming from mobile devices</li>
+                    <li>Strong local performance in Brantford, Hamilton, and Mississauga markets</li>
+                    <li>Windshield replacement and repair keywords delivered 85 conversions combined</li>
+                </ul>
+
+                <div class="looking-ahead">
+                    <div class="looking-ahead-title">Looking Ahead to January</div>
+                    <p>We're optimizing our mobile experience even further based on the strong mobile performance, and expanding our successful local targeting strategy. The winter season typically brings increased demand for auto glass services, so we're positioning your campaigns to capture every opportunity.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Report generated on January 1, 2026</p>
+            <p>Questions? <a href="mailto:matt@autoglassmarketingpros.com">matt@autoglassmarketingpros.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
